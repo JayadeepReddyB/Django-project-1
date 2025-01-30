@@ -11,7 +11,14 @@ class Product(models.Model): # Model is a class in models that contain the metho
     # Provding the object attributes for product
     name = models.CharField(max_length = 200) # this forms a varchar col in the `Product` table of name `name`
     price = models.PositiveIntegerField()   # unsigned integer
-    desc = models.TextField()   # becomes long or medium text
+    desc = models.TextField()   # becomes long or medium texts
+    stock = models.PositiveIntegerField(default=1) # stock INT DEFAULT 1
+
+    # For the ImageFeild, sql stores only the relative path of the image, the actual image will be stored
+    # in the specified media server subfolder, in this case, `products`. Rest of config is in settings.py
+
+    pic = models.ImageField(upload_to = "products/", null = True)
+
     
     def __str__(self):
         return self.name

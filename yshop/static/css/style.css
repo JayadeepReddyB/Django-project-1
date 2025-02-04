@@ -11,10 +11,10 @@ body {
 
         div.card-group {
             div.card {
-                width: 100px;
+                width: 200px;
 
                 div.card-img {
-                    height: 100px;
+                    height: 200px;
                     /* aspect-ratio: ; */
                 }
 

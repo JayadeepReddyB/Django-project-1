@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Product details Page
+{% endblock %}  
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="img">
+                {% if prod.pic %}
+                <img src="{{ prod.pic.url}}" alt="">
+                {% else %}
+                Product has no image
+                {% endif %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <h1>{{ prod.name }}</h1>
+                <P>{{ prod.desc }}</P>
+                <span>
+                    &#8377;    {{ prod.price }}
+                </span>
+                <button class="btn btn-primary">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -22,7 +22,7 @@ def home(request):
 def product_details(request,id):
     product = Product.objects.get(id = id) # select * from products where id = <parameter_id>
     context = {
-            'prod' = product
+            'prod' : product
     }
     template = loader.get_template('prod_details.html')
     return HttpResponse(template.render(context,request))

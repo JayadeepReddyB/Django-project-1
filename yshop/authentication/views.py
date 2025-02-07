@@ -20,7 +20,7 @@ from django.contrib.auth.views import LoginView
 class UserRegisterView(generic.CreateView):
     form_class = UserCreationForm
     template_name = 'registration.html'
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('signin') # to redirect to the given page after signup is done
 
 
 # inheriting the LoginView class

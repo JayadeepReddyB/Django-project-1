@@ -130,3 +130,9 @@ MEDIIA_URL = '/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Let's stepup the authentication URLs
+
+LOGIN_URL = 'signin'
+LOGIN_REDIRECT_URL = 'homepage'
+LOGOUT_REDIRECT_URL =  'homepage'

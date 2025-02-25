@@ -37,9 +37,9 @@
                     </div>
                 </div>
                 {% else %}
-                <button class="btn btn-primary">
-                    Add to cart
-                </button>
+
+                <a class="btn btn-primary" href="{% url 'add_to_cart' prod.pk %}">Add to Cart</a>
+
                 {% endif %}
 
             </div>

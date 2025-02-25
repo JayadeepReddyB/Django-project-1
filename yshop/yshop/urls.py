@@ -26,7 +26,8 @@ urlpatterns = [
     path('', include('mainapp.urls')),
     path('authentication/',include('authentication.urls')), # including our authentication app's urls
     # to include the path from django's inbuilt authentication, from django.contrib.auth
-    path('authentication/',include('django.contrib.auth.urls'))
+    path('authentication/',include('django.contrib.auth.urls')),
+    path('',include('cart.urls'))
 ]
 
 if settings.DEBUG == True:

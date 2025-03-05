@@ -1,36 +1,67 @@
 {% extends 'base.html' %}
+
 {% load static %}
+
 {% block title %}
-    Yshop | Home
+Yshop | Home
 {% endblock %}
+
 {% block content %}
-      <h1>
-        Products
-      </h1>
-      <!-- The django template code  to show all products in the page starts here -->
+
+<h1>
+  Products
+</h1>
+<!-- The django template code  to show all products in the page starts here -->
 
 
-      <div class="card-group">
-        {% for product in prods %}
-        <div class="card">
-        {% if product.pic %}
-          <img src="{{product.pic.url}}" class="card-img-top" alt="An image of {{product.name}}">
-        {% else %}
-            <img src="{% static 'images/sample/img1.jpg' %}" class="card-img-top">
-        {% endif %}
-            
+<!-- <div class="card-group">
+  {% for product in prods %}
+  <div class="card">
+    {% if product.pic %}
+    <img src="{{product.pic.url}}" class="card-img-top" alt="An image of {{product.name}}">
+    {% else %}
+    <img src="{% static 'images/sample/img1.jpg' %}" class="card-img-top">
+    {% endif %}
+
+    <div class="card-body">
+
+      <a href="{% url 'prod_details' product.id %}">
+        <h5 class="card-title">{{product.name}}</h5>
+      </a>
+      <p class="card-text">{{product.desc}}</p>
+      <p class="card-text">&#8377; {{product.price}}</p>
+      <p class="card-text"><small class="text-body-secondary"></small></p>
+      <a class="btn btn-primary" href="{% url 'add_to_cart' product.pk %}">Add to Cart</a>
+    </div>
+  </div>
+  {% endfor %}
+</div> -->
+<div class="grid-container">
+  {% for product in prods %}
+  <div class="grid-item ">
+    <div class="card mb-4" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4 " style="max-height: 187px;">
+          {% if product.pic %}
+          <img src="{{product.pic.url}}" class="img-fluid rounded-start h-100" alt="...">
+          {% else %}
+          <img src="{% static 'images/sample/img1.jpg' %}" class="card-img-top">
+          {% endif %}
+        </div>
+        <div class="col-md-8">
           <div class="card-body">
-            
             <a href="{% url 'prod_details' product.id %}">
               <h5 class="card-title">{{product.name}}</h5>
             </a>
-            <p class="card-text">{{product.desc}}</p>
+            <p class="card-text" id="desc">{{product.desc}}</p>
             <p class="card-text">&#8377; {{product.price}}</p>
-            <p class="card-text"><small class="text-body-secondary"></small></p>
             <a class="btn btn-primary" href="{% url 'add_to_cart' product.pk %}">Add to Cart</a>
           </div>
         </div>
-        {% endfor %}
       </div>
-      <!-- Django template code ends here -->
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<!-- Django template code ends here -->
 {% endblock %}

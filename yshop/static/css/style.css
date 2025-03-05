@@ -38,6 +38,16 @@ body {
             }
         }
 
+        div.grid-container{
+            background-color: blueviolet;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            /* gap: 10px; */
+            div.grid-item{
+                max-height: 540px;
+            }
+        }
+
 
         div.class-group {
             div.card {
